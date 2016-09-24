@@ -36,6 +36,7 @@ class CliRequestTest extends PHPUnit_Framework_TestCase
         $this->request = new CliRequest([
             '--foo=bar',
             '--bar=foo',
+            '--baz',
             '/my/path.txt'
         ], $this->stream);
     }
@@ -70,7 +71,8 @@ class CliRequestTest extends PHPUnit_Framework_TestCase
     {
         $expected = [
             'foo' => 'bar',
-            'bar' => 'foo'
+            'bar' => 'foo',
+            'baz' => ''
         ];
 
         $this->assertSame($expected, iterator_to_array($this->request->getArguments()

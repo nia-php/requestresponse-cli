@@ -139,7 +139,7 @@ class CliRequest implements CliRequestInterface
 
         foreach ($arguments as $argument) {
             if (preg_match($regex, $argument, $matches) !== 0) {
-                $result->set($matches['name'], trim($matches['value'] ?: '', '"'));
+                $result->set($matches['name'], trim($matches['value'] ?? '', '"'));
             }
         }
 
