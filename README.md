@@ -30,7 +30,7 @@ The following sample shows you how to use the CLI request response component for
 	require_once __DIR__ . '/../vendor/autoload.php';
 
 	// create the request.
-	$request = new CliRequest($_SERVER['argv']);
+	$request = new CliRequest($_SERVER['argv'], STDIN);
 
 	// [...]
 	//
